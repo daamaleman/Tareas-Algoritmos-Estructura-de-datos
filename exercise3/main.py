@@ -11,7 +11,9 @@ def main():
     search_dao = dao.SearchDAO()
     
     # Pedir datos al usuario
-    print("=== PRUEBA DE BÚSQUEDA ===")
+    print("-" * 30)
+    print("Algoritmos de Búsqueda")
+    print("-" * 30)
     data = list(map(int, input("Ingrese una lista de números separados por espacios: ").replace(',', ' ').split()))
     target = int(input("Ingrese el número a buscar: "))
     sorted_data = sorted(data)
@@ -20,12 +22,12 @@ def main():
     print(f"Numero a buscar: {target}\n")
     
     # Búsqueda lineal
-    print("Búsqueda Lineal:")
+    print("Posición por búsqueda Lineal:")
     res = search_dao.search('linear', data, target)
     print(f"Posición: {res}" if res != -1 else "No encontrado")
     
     # Búsqueda binaria
-    print("\nBúsqueda Binaria:")
+    print("\nPosicion por búsqueda Binaria:")
     res = search_dao.search('binary', sorted_data, target)
     print(f"Posición: {res}" if res != -1 else "No encontrado")
     
